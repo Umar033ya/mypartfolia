@@ -4,15 +4,18 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Github } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { projects } from "@/lib/data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section id="projects" className="py-24 sm:py-32">
       <div className="container-content">
         <SectionHeading
-          eyebrow="Selected work"
-          title="Three products, two platforms, one standard."
-          description="A look at what's shipped — the problem, the build, and the stack behind it."
+          eyebrow={t("projects.eyebrow")}
+          title={t("projects.title")}
+          description={t("projects.description")}
         />
 
         <div className="mt-14 space-y-6">
@@ -73,12 +76,12 @@ export function Projects() {
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-2">
-                    {project.tech.map((t) => (
+                    {project.tech.map((techItem) => (
                       <span
-                        key={t}
+                        key={techItem}
                         className="rounded-full border border-border px-3 py-1 text-xs text-ink-secondary"
                       >
-                        {t}
+                        {techItem}
                       </span>
                     ))}
                   </div>
@@ -89,15 +92,17 @@ export function Projects() {
                         href={project.links.demo}
                         className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-primary transition-colors hover:text-accent-blue"
                       >
-                        View project <ArrowUpRight size={15} />
+                        {t("projects.viewProject")} <ArrowUpRight size={15} />
                       </a>
                     ) : null}
                     {project.links.repo ? (
                       <a
                         href={project.links.repo}
+                        target="_blank"
+                        rel="noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm text-ink-secondary transition-colors hover:text-ink-primary"
                       >
-                        <Github size={15} /> Source
+                        <Github size={15} /> {t("projects.sourceCode")}
                       </a>
                     ) : null}
                   </div>

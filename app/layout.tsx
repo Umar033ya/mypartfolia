@@ -1,65 +1,49 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
+const spaceGrotesk = { variable: "--font-display" };
+const inter = { variable: "--font-body" };
+const jetbrainsMono = { variable: "--font-mono" };
 
 const siteUrl = "https://umar.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Umar — Full Stack JavaScript Developer",
-    template: "%s — Umar",
+    default: "Abdulla Yakubov | React Native & Full Stack Developer",
+    template: "%s — Abdulla Yakubov",
   },
   description:
-    "Umar is a Full Stack JavaScript Developer building fast, polished products across web and mobile with React, React Native, Next.js and TypeScript.",
+    "Abdulla Yakubov is a 17-year-old React Native & Full Stack Developer building high-performance, polished products across web and mobile with React Native, TypeScript, Next.js, and React.",
   keywords: [
-    "Umar",
-    "Full Stack Developer",
-    "React Developer",
+    "Abdulla Yakubov",
     "React Native Developer",
-    "Next.js Developer",
+    "Full Stack Developer",
     "TypeScript",
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Tailwind CSS",
+    "Mobile Developer",
     "Frontend Engineer",
-    "Mobile App Developer",
-    "Expo Developer",
   ],
-  authors: [{ name: "Umar" }],
-  creator: "Umar",
+  authors: [{ name: "Abdulla Yakubov" }],
+  creator: "Abdulla Yakubov",
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Umar — Full Stack JavaScript Developer",
+    title: "Abdulla Yakubov | React Native & Full Stack Developer",
     description:
-      "Building fast, polished products across web and mobile with React, React Native, Next.js and TypeScript.",
-    siteName: "Umar",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Umar — Full Stack JavaScript Developer" }],
+      "Building high-performance, polished products across web and mobile with React Native, TypeScript, Next.js, and React.",
+    siteName: "Abdulla Yakubov",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Abdulla Yakubov | React Native & Full Stack Developer" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Umar — Full Stack JavaScript Developer",
+    title: "Abdulla Yakubov | React Native & Full Stack Developer",
     description:
-      "Building fast, polished products across web and mobile with React, React Native, Next.js and TypeScript.",
+      "Building high-performance, polished products across web and mobile with React Native, TypeScript, Next.js, and React.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -78,8 +62,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
-      <body>{children}</body>
+    <html lang="uz" suppressHydrationWarning className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

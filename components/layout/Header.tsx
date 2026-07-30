@@ -1,14 +1,19 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { nav } from "@/lib/data";
+import { navKeys } from "@/lib/data";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     function onScroll() {
@@ -32,41 +37,47 @@ export function Header() {
             scrolled ? "glass shadow-[0_8px_32px_rgba(0,0,0,0.35)]" : "bg-transparent border border-transparent"
           }`}
         >
-          <a
-            href="#top"
+          <Link
+            href="/"
             className="flex items-center gap-2 font-display text-lg font-semibold text-ink-primary"
           >
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-gradient text-sm font-bold text-bg">
-              U
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-gradient text-xs font-bold text-bg">
+              AY
             </span>
-            Umar
-          </a>
+            Abdulla
+          </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {nav.map((item) => (
-              <a
+          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+            {navKeys.map((item) => (
+              <Link
                 key={item.href}
                 href={item.href}
                 className="text-sm text-ink-secondary transition-colors hover:text-ink-primary"
               >
-                {item.label}
-              </a>
+                {t(`nav.${item.key}`)}
+              </Link>
             ))}
           </nav>
 
-          <div className="hidden md:block">
-            <MagneticButton href="#contact" variant="secondary" className="px-5 py-2.5 text-sm">
-              Let&apos;s talk
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            <MagneticButton href="/#contact" variant="secondary" className="px-4 py-2 text-xs sm:px-5 sm:py-2.5 sm:text-sm">
+              {t("nav.letsTalk")}
             </MagneticButton>
           </div>
 
-          <button
-            aria-label="Toggle menu"
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg text-ink-primary"
-          >
-            {open ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <LanguageSwitcher />
+            <ThemeToggle />
+            <button
+              aria-label="Toggle menu"
+              onClick={() => setOpen((v) => !v)}
+              className="flex h-9 w-9 items-center justify-center rounded-lg text-ink-primary"
+            >
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
         {open ? (
@@ -76,23 +87,23 @@ export function Header() {
             className="glass mt-2 rounded-2xl p-4 md:hidden"
           >
             <nav className="flex flex-col gap-1">
-              {nav.map((item) => (
-                <a
+              {navKeys.map((item) => (
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
                   className="rounded-lg px-3 py-2.5 text-sm text-ink-secondary transition-colors hover:bg-surface-hover hover:text-ink-primary"
                 >
-                  {item.label}
-                </a>
+                  {t(`nav.${item.key}`)}
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={() => setOpen(false)}
                 className="mt-2 rounded-lg bg-ink-primary px-3 py-2.5 text-center text-sm font-medium text-bg"
               >
-                Let&apos;s talk
-              </a>
+                {t("nav.letsTalk")}
+              </Link>
             </nav>
           </motion.div>
         ) : null}

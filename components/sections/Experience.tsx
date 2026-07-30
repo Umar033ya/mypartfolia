@@ -3,15 +3,18 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { experience } from "@/lib/data";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section id="experience" className="py-24 sm:py-32">
       <div className="container-content">
         <SectionHeading
-          eyebrow="Journey"
-          title="How the toolkit came together."
-          description="Each stage added a platform or a discipline — the throughline is always shipping real, working products."
+          eyebrow={t("experience.eyebrow")}
+          title={t("experience.title")}
+          description={t("experience.description")}
         />
 
         <div className="mt-16 relative">

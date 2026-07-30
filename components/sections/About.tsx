@@ -3,45 +3,40 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
+import { useLanguage } from "@/context/LanguageContext";
 
 const codeLines = [
   { text: "const developer = {", indent: 0, color: "text-ink-secondary" },
-  { text: "name: 'Umar',", indent: 1, color: "text-accent-teal" },
-  { text: "role: 'Full Stack JS Developer',", indent: 1, color: "text-accent-blue" },
-  { text: "platforms: ['web', 'iOS', 'android'],", indent: 1, color: "text-accent-violet" },
-  { text: "believesIn: 'shipping well-typed code',", indent: 1, color: "text-ink-secondary" },
+  { text: "name: 'Abdulla Yakubov',", indent: 1, color: "text-accent-teal" },
+  { text: "age: 17,", indent: 1, color: "text-ink-primary" },
+  { text: "role: 'React Native & Full Stack Developer',", indent: 1, color: "text-accent-blue" },
+  { text: "platforms: ['iOS', 'Android', 'Web'],", indent: 1, color: "text-accent-violet" },
+  { text: "believesIn: 'clean code & fluid user experiences',", indent: 1, color: "text-ink-secondary" },
   { text: "};", indent: 0, color: "text-ink-secondary" },
 ];
 
 export function About() {
+  const { t } = useLanguage();
+
+  const tags: string[] = t("about.tags") || [];
+
   return (
     <section id="about" className="py-24 sm:py-32">
       <div className="container-content grid gap-14 lg:grid-cols-[1fr_1fr] lg:gap-20 items-center">
         <div>
           <SectionHeading
-            eyebrow="About"
-            title="I build the whole product, not just the screen."
-            description="Umar is a full stack JavaScript developer who works comfortably across the entire stack — from data modeling and state management to the pixel-level detail of an interface. The same care goes into a web dashboard as into a mobile app used every day."
+            eyebrow={t("about.eyebrow")}
+            title={t("about.title")}
+            description={t("about.description")}
           />
 
           <div className="mt-8 space-y-4 text-ink-secondary leading-relaxed">
-            <p>
-              That range shows up in the work: <strong className="text-ink-primary font-medium">DropForge</strong> and{" "}
-              <strong className="text-ink-primary font-medium">Dachago.uz</strong> are production web
-              platforms built with Next.js and TypeScript, while the{" "}
-              <strong className="text-ink-primary font-medium">Mental Arithmetic Trainer</strong> is a
-              React Native app shipped to iOS and Android from a single codebase.
-            </p>
-            <p>
-              Umar favors TypeScript everywhere, keeps state predictable with
-              Zustand and Redux Toolkit, and treats Git history as
-              documentation — every project is built to be handed off, not
-              just handed over.
-            </p>
+            <p>{t("about.p1")}</p>
+            <p>{t("about.p2")}</p>
           </div>
 
           <div className="mt-9 flex flex-wrap gap-3">
-            {["Web", "iOS", "Android", "TypeScript-first"].map((tag) => (
+            {Array.isArray(tags) && tags.map((tag) => (
               <span
                 key={tag}
                 className="rounded-full glass px-4 py-1.5 text-xs font-mono text-ink-secondary"

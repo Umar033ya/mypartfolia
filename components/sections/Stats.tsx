@@ -3,8 +3,13 @@
 import { motion } from "framer-motion";
 import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { stats } from "@/lib/data";
+import { useLanguage } from "@/context/LanguageContext";
+
+const statKeys = ["productsShipped", "techMastered", "platformsCovered", "tsAdoption"];
 
 export function Stats() {
+  const { t } = useLanguage();
+
   return (
     <section className="py-24 sm:py-32">
       <div className="container-content">
@@ -22,7 +27,9 @@ export function Stats() {
                 <div className="font-mono text-4xl sm:text-5xl font-semibold gradient-text">
                   <AnimatedCounter value={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="mt-2 text-sm font-medium text-ink-primary">{stat.label}</div>
+                <div className="mt-2 text-sm font-medium text-ink-primary">
+                  {t(`stats.${statKeys[i]}`)}
+                </div>
                 <div className="mt-0.5 text-xs text-ink-tertiary">{stat.note}</div>
               </motion.div>
             ))}

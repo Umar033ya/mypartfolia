@@ -5,28 +5,29 @@ const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./context/**/*.{js,ts,jsx,tsx,mdx}",
     "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         bg: {
-          DEFAULT: "#08090C",
-          elevated: "#0D0E13",
-          panel: "#101218",
+          DEFAULT: "var(--bg-main)",
+          elevated: "var(--bg-elevated)",
+          panel: "var(--bg-panel)",
         },
         surface: {
-          DEFAULT: "rgba(255,255,255,0.03)",
-          hover: "rgba(255,255,255,0.06)",
+          DEFAULT: "var(--surface-bg)",
+          hover: "var(--surface-hover)",
         },
         border: {
-          DEFAULT: "rgba(255,255,255,0.08)",
-          strong: "rgba(255,255,255,0.16)",
+          DEFAULT: "var(--border-color)",
+          strong: "var(--border-strong)",
         },
         ink: {
-          primary: "#F5F6F8",
-          secondary: "#9AA0AC",
-          tertiary: "#5B606D",
+          primary: "var(--ink-primary)",
+          secondary: "var(--ink-secondary)",
+          tertiary: "var(--ink-tertiary)",
         },
         accent: {
           blue: "#4F8CFF",

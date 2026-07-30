@@ -3,8 +3,34 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg-main: #FFFFFF;
+    --bg-elevated: #F8FAFC;
+    --bg-panel: #F1F5F9;
+    --surface-bg: rgba(0, 0, 0, 0.03);
+    --surface-hover: rgba(0, 0, 0, 0.06);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.16);
+    --ink-primary: #0F172A;
+    --ink-secondary: #475569;
+    --ink-tertiary: #94A3B8;
+  }
+
+  .dark {
+    --bg-main: #08090C;
+    --bg-elevated: #0D0E13;
+    --bg-panel: #101218;
+    --surface-bg: rgba(255, 255, 255, 0.03);
+    --surface-hover: rgba(255, 255, 255, 0.06);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --ink-primary: #F5F6F8;
+    --ink-secondary: #9AA0AC;
+    --ink-tertiary: #5B606D;
+  }
+
   * {
-    @apply border-border;
+    border-color: var(--border-color);
   }
 
   html {
@@ -12,7 +38,9 @@
   }
 
   body {
-    @apply bg-bg text-ink-primary font-body antialiased;
+    background-color: var(--bg-main);
+    color: var(--ink-primary);
+    @apply font-body antialiased transition-colors duration-300;
     background-image:
       radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79, 140, 255, 0.12), transparent),
       radial-gradient(ellipse 60% 40% at 100% 10%, rgba(45, 212, 191, 0.08), transparent);
@@ -38,25 +66,31 @@
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #08090C;
+    background: var(--bg-main);
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.12);
+    background: var(--border-strong);
     border-radius: 999px;
-    border: 2px solid #08090C;
+    border: 2px solid var(--bg-main);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--ink-tertiary);
   }
 }
 
 @layer components {
   .glass {
-    @apply bg-surface backdrop-blur-xl border border-border;
+    background-color: var(--surface-bg);
+    border-color: var(--border-color);
+    @apply backdrop-blur-xl border;
   }
 
   .glass-hover {
-    @apply transition-colors duration-300 hover:bg-surface-hover hover:border-border-strong;
+    @apply transition-colors duration-300;
+  }
+  .glass-hover:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--border-strong);
   }
 
   .section-eyebrow {

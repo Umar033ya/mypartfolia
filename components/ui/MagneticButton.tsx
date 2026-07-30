@@ -1,19 +1,22 @@
 "use client";
 
-import { AnchorHTMLAttributes, ReactNode, useRef } from "react";
+import Link from "next/link";
+import { ReactNode, useRef } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-type MagneticButtonProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type MagneticButtonProps = {
   children: ReactNode;
+  href: string;
   variant?: "primary" | "secondary";
+  className?: string;
 };
 
 export function MagneticButton({
   children,
+  href,
   className,
   variant = "primary",
-  ...props
 }: MagneticButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null);
 
@@ -33,22 +36,26 @@ export function MagneticButton({
   }
 
   return (
-    <motion.a
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+    <motion.div
       whileTap={{ scale: 0.96 }}
-      className={cn(
-        "group relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-[transform,box-shadow] duration-300 ease-out",
-        variant === "primary"
-          ? "bg-ink-primary text-bg shadow-[0_0_0_1px_rgba(255,255,255,0.08)] hover:shadow-[0_8px_30px_rgba(79,140,255,0.35)]"
-          : "glass glass-hover text-ink-primary",
-        className
-      )}
-      style={{ transitionProperty: "transform" }}
-      {...props}
+      className="inline-block"
     >
-      {children}
-    </motion.a>
+      <Link
+        ref={ref}
+        href={href}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={cn(
+          "group relative inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-[transform,box-shadow] duration-300 ease-out",
+          variant === "primary"
+            ? "bg-ink-primary text-bg shadow-[0_0_0_1px_rgba(255,255,255,0.08)] hover:shadow-[0_8px_30px_rgba(79,140,255,0.35)]"
+            : "glass glass-hover text-ink-primary",
+          className
+        )}
+        style={{ transitionProperty: "transform" }}
+      >
+        {children}
+      </Link>
+    </motion.div>
   );
 }

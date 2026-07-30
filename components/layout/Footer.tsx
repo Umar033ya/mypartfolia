@@ -1,27 +1,31 @@
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
-import { socials } from "@/lib/data";
+"use client";
 
-const iconMap = { github: Github, linkedin: Linkedin, mail: Mail };
+import { Github, Mail, Send, ArrowUp } from "lucide-react";
+import { socials } from "@/lib/data";
+import { useLanguage } from "@/context/LanguageContext";
+
+const iconMap = { send: Send, github: Github, mail: Mail };
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="border-t border-border">
       <div className="container-content py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-2 font-display text-base font-semibold text-ink-primary">
           <span className="flex h-7 w-7 items-center justify-center rounded-md bg-accent-gradient text-xs font-bold text-bg">
-            U
+            AY
           </span>
-          Umar
+          Abdulla Yakubov
           <span className="ml-2 font-mono text-xs font-normal text-ink-tertiary">
-            © {year}
+            © {year} • {t("footer.copyright")}
           </span>
         </div>
 
         <div className="flex items-center gap-5">
           {socials.map((s) => {
-            const Icon = iconMap[s.icon];
+            const Icon = iconMap[s.icon as keyof typeof iconMap] || Mail;
             return (
               <a
                 key={s.label}
@@ -41,7 +45,7 @@ export function Footer() {
           href="#top"
           className="flex items-center gap-2 text-sm text-ink-secondary transition-colors hover:text-ink-primary"
         >
-          Back to top
+          {t("footer.backToTop")}
           <span className="flex h-8 w-8 items-center justify-center rounded-full glass glass-hover">
             <ArrowUp size={14} />
           </span>

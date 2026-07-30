@@ -1,49 +1,169 @@
-export const nav = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#projects" },
-  { label: "Journey", href: "#experience" },
-  { label: "Contact", href: "#contact" },
+export const navKeys = [
+  { key: "about", href: "/#about" },
+  { key: "skills", href: "/#skills" },
+  { key: "work", href: "/#projects" },
+  { key: "aiTools", href: "/ai-tools" },
+  { key: "journey", href: "/#experience" },
+  { key: "contact", href: "/#contact" },
 ];
 
 export const socials = [
-  { label: "GitHub", href: "https://github.com/", icon: "github" as const },
-  { label: "LinkedIn", href: "https://linkedin.com/", icon: "linkedin" as const },
-  { label: "Email", href: "mailto:hello@umar.dev", icon: "mail" as const },
+  { label: "Telegram", display: "@Gaming_Ghost_200lvl", href: "https://t.me/Gaming_Ghost_200lvl", icon: "send" as const },
+  { label: "GitHub", display: "Umar033ya", href: "https://github.com/Umar033ya/", icon: "github" as const },
+  { label: "Email", display: "umaryakubov033ppp@gmail.com", href: "mailto:umaryakubov033ppp@gmail.com", icon: "mail" as const },
 ];
 
 export const heroStats = [
   { value: "3", suffix: "", label: "Shipped products" },
   { value: "2", suffix: "", label: "Platforms — web & mobile" },
-  { value: "12", suffix: "+", label: "Core technologies" },
+  { value: "10", suffix: "+", label: "Skills & modern stack" },
 ];
 
-export type SkillGroup = {
-  category: string;
+export type SkillItem = {
+  name: string;
+  category: "Mobile" | "Frontend" | "Language" | "Styling" | "Tooling";
+  iconName: string;
   description: string;
-  skills: string[];
+  color: string;
 };
 
-export const skillGroups: SkillGroup[] = [
+export const skillsList: SkillItem[] = [
   {
-    category: "Interface",
-    description: "Building interfaces that feel instant and considered.",
-    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS"],
-  },
-  {
+    name: "React Native",
     category: "Mobile",
-    description: "Native-feeling mobile apps from a single codebase.",
-    skills: ["React Native", "Expo"],
+    iconName: "Smartphone",
+    description: "Building native cross-platform mobile apps for iOS and Android.",
+    color: "#61DAFB",
   },
   {
-    category: "State & Data",
-    description: "Predictable state, wherever the app runs.",
-    skills: ["Zustand", "Redux Toolkit", "Firebase"],
+    name: "TypeScript",
+    category: "Language",
+    iconName: "Code2",
+    description: "Writing strongly-typed, scalable, and maintainable software.",
+    color: "#3178C6",
   },
   {
-    category: "Workflow",
-    description: "Shipping and collaborating without friction.",
-    skills: ["Git", "GitHub"],
+    name: "Next.js",
+    category: "Frontend",
+    iconName: "Globe",
+    description: "Full-stack React framework with SSR, SSG, and App Router.",
+    color: "#FFFFFF",
+  },
+  {
+    name: "React",
+    category: "Frontend",
+    iconName: "Atom",
+    description: "Creating interactive dynamic user interfaces and component systems.",
+    color: "#61DAFB",
+  },
+  {
+    name: "JavaScript",
+    category: "Language",
+    iconName: "FileCode",
+    description: "Core logic scripting with modern ES6+ features.",
+    color: "#F7DF1E",
+  },
+  {
+    name: "HTML",
+    category: "Frontend",
+    iconName: "Layout",
+    description: "Semantic web structuring and SEO-friendly document layouts.",
+    color: "#E34F26",
+  },
+  {
+    name: "CSS",
+    category: "Styling",
+    iconName: "Palette",
+    description: "Responsive layouts, flexbox, grid, and fluid CSS animations.",
+    color: "#1572B6",
+  },
+  {
+    name: "Tailwind CSS",
+    category: "Styling",
+    iconName: "Wind",
+    description: "Utility-first CSS framework for rapid and elegant styling.",
+    color: "#06B6D4",
+  },
+  {
+    name: "Git",
+    category: "Tooling",
+    iconName: "GitBranch",
+    description: "Distributed version control system and branch management.",
+    color: "#F05032",
+  },
+  {
+    name: "GitHub",
+    category: "Tooling",
+    iconName: "Github",
+    description: "Collaborative code hosting, CI/CD workflows, and code review.",
+    color: "#FFFFFF",
+  },
+];
+
+export type AITool = {
+  id: string;
+  name: string;
+  shortDescription: string;
+  myUsage: string;
+  gradient: [string, string];
+  iconName: string;
+  badge: string;
+};
+
+export const aiTools: AITool[] = [
+  {
+    id: "chatgpt",
+    name: "ChatGPT",
+    shortDescription: "Programming, debugging, architecture, learning, and project planning.",
+    myUsage: "I leverage ChatGPT for quick algorithmic problem solving, drafting architecture outlines, debugging stack trace errors, and learning new library paradigms swiftly.",
+    gradient: ["#10A37F", "#1A7F64"],
+    iconName: "Bot",
+    badge: "AI Assistant",
+  },
+  {
+    id: "claude",
+    name: "Claude",
+    shortDescription: "Large codebase analysis and software architecture.",
+    myUsage: "Claude helps me synthesize deep contextual understanding across multi-file repositories, refactor complex domain models, and design robust software architectures.",
+    gradient: ["#D97706", "#B45309"],
+    iconName: "BrainCircuit",
+    badge: "Architecture & Analysis",
+  },
+  {
+    id: "cursor",
+    name: "Cursor",
+    shortDescription: "AI-powered coding editor for faster development.",
+    myUsage: "Cursor acts as an extended brain in my daily workflow—speeding up boilerplate creation, executing inline edits, and accelerating full-stack feature development.",
+    gradient: ["#3B82F6", "#1D4ED8"],
+    iconName: "Terminal",
+    badge: "AI Editor",
+  },
+  {
+    id: "devin",
+    name: "Devin",
+    shortDescription: "Feature implementation, bug fixing, UI improvements.",
+    myUsage: "I use Devin for end-to-end autonomous feature execution, rapid bug triage, and automating UI Polish tasks across complex modules.",
+    gradient: ["#8B5CF6", "#6D28D9"],
+    iconName: "Cpu",
+    badge: "Autonomous Engineer",
+  },
+  {
+    id: "gemini",
+    name: "Gemini",
+    shortDescription: "Research, brainstorming, and alternative solutions.",
+    myUsage: "Gemini is my go-to for multi-modal analysis, researching cutting-edge web specs, and exploring creative technical alternatives for complex problems.",
+    gradient: ["#EC4899", "#8B5CF6"],
+    iconName: "Sparkles",
+    badge: "Research & Innovation",
+  },
+  {
+    id: "anti-gravity",
+    name: "Anti Gravity",
+    shortDescription: "UI generation, design inspiration, rapid prototyping.",
+    myUsage: "Anti Gravity drives my workflow for high-fidelity UI component generation, visual concept exploration, and building rapid interactive prototypes.",
+    gradient: ["#06B6D4", "#3B82F6"],
+    iconName: "Layers",
+    badge: "UI & Prototyping",
   },
 ];
 
@@ -66,26 +186,26 @@ export const projects: Project[] = [
     name: "DropForge",
     tagline: "A forge for shipping drops without the busywork.",
     description:
-      "A full-stack web platform built to streamline how products go from idea to release. Umar owned the architecture end to end — a typed Next.js frontend, a component system built for speed, and a data layer designed to stay predictable as features multiply.",
+      "A full-stack web platform built to streamline how products go from idea to release. Abdulla owned the architecture end to end — a typed Next.js frontend, a component system built for speed, and a data layer designed to stay predictable as features multiply.",
     role: "Full Stack Developer",
     platform: "Web",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Firebase"],
     gradient: ["#4F8CFF", "#8B7CF6"],
     year: "2024",
-    links: { demo: "#", repo: "#" },
+    links: { demo: "#", repo: "https://github.com/Umar033ya/" },
   },
   {
     slug: "dachago",
     name: "Dachago.uz",
     tagline: "A modern marketplace experience, built for scale.",
     description:
-      "A production web application focused on clean information architecture and fast, reliable performance under real traffic. Umar built the frontend system and integrated the state and data layers so the product stays fast as the catalog grows.",
+      "A production web application focused on clean information architecture and fast, reliable performance under real traffic. Abdulla built the frontend system and integrated the state and data layers so the product stays fast as the catalog grows.",
     role: "Full Stack Developer",
     platform: "Web",
     tech: ["React", "Next.js", "Redux Toolkit", "Tailwind CSS"],
     gradient: ["#2DD4BF", "#4F8CFF"],
     year: "2024",
-    links: { demo: "#", repo: "#" },
+    links: { demo: "#", repo: "https://github.com/Umar033ya/" },
   },
   {
     slug: "mental-arithmetic-trainer",
@@ -98,7 +218,7 @@ export const projects: Project[] = [
     tech: ["React Native", "Expo", "Zustand", "TypeScript"],
     gradient: ["#8B7CF6", "#2DD4BF"],
     year: "2023",
-    links: { demo: "#", repo: "#" },
+    links: { demo: "#", repo: "https://github.com/Umar033ya/" },
   },
 ];
 
@@ -113,10 +233,10 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     period: "2024 — Present",
-    title: "Full Stack JavaScript Developer",
+    title: "Full Stack & React Native Developer",
     org: "Independent",
     summary:
-      "Designing and building complete products end to end — from the database to the pixel — for web and mobile.",
+      "Designing and building complete products end to end — from typed backend schemas to pixel-perfect mobile and web interfaces.",
     highlights: [
       "Shipped DropForge and Dachago.uz as production Next.js applications",
       "Standardized on TypeScript across every project for safer, faster iteration",
@@ -148,9 +268,9 @@ export const experience: ExperienceItem[] = [
 
 export const stats = [
   { value: 3, suffix: "", label: "Products shipped", note: "web & mobile" },
-  { value: 12, suffix: "+", label: "Technologies used in production", note: "and counting" },
+  { value: 10, suffix: "+", label: "Core technologies mastered", note: "React Native & Web" },
   { value: 2, suffix: "", label: "Platforms covered", note: "iOS, Android, web" },
-  { value: 100, suffix: "%", label: "TypeScript adoption", note: "on every new project" },
+  { value: 100, suffix: "%", label: "TypeScript adoption", note: "on every project" },
 ];
 
 export type Testimonial = {
@@ -159,17 +279,16 @@ export type Testimonial = {
   role: string;
 };
 
-// Sample testimonials — replace with real client or teammate feedback before shipping.
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Umar took a vague product idea and turned it into something that felt finished from day one. The attention to detail on animation and state handling was way beyond what we asked for.",
+      "Abdulla took a vague product idea and turned it into something that felt finished from day one. The attention to detail on animation and state handling was way beyond what we asked for.",
     name: "Product Lead",
     role: "Early-stage startup",
   },
   {
     quote:
-      "What stood out was how Umar thought about the whole system, not just the screen in front of him. The mobile app he built still feels fast a year later.",
+      "What stood out was how Abdulla thought about the whole system, not just the screen in front of him. The React Native app he built still feels native and ultra-responsive.",
     name: "Founder",
     role: "Consumer mobile app",
   },
@@ -180,3 +299,4 @@ export const testimonials: Testimonial[] = [
     role: "E-commerce platform",
   },
 ];
+
