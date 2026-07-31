@@ -1,0 +1,70 @@
+Vercel CLI 58.4.4 (Node.js 24.16.0)
+> [debug] [2026-07-31T05:28:47.961Z] Agent/TTY/nonInteractive: isAgent=false agentName=none stdin.isTTY=true --non-interactive=false explicitFalse=false => nonInteractive=false
+> [debug] [2026-07-31T05:28:47.962Z] user supplied known subcommand: "deploy"
+> [debug] [2026-07-31T05:28:48.032Z] Found ".vercel\repo.json" - detected "C:\Users\User\Desktop\mypartfolia" as repo root
+> [debug] [2026-07-31T05:28:48.032Z] Spinner invoked (Retrieving project…) with a 1000ms delay
+> [debug] [2026-07-31T05:28:48.033Z] Valid access token, skipping token refresh.
+> [debug] [2026-07-31T05:28:48.045Z] #1 → GET https://api.vercel.com/teams/team_LV1lXj96vUprVmMM1fjb1XHJ?teamId=team_LV1lXj96vUprVmMM1fjb1XHJ
+> [debug] [2026-07-31T05:28:48.047Z] #2 → GET https://api.vercel.com/v9/projects/prj_BO60zp0miRulRJVLs7UuOVOAPyni?teamId=team_LV1lXj96vUprVmMM1fjb1XHJ
+> [debug] [2026-07-31T05:28:48.863Z] #2 ← 200 OK: sfo1::rpnf8-1785475728758-320d89b7090f [816ms]
+> [debug] [2026-07-31T05:28:48.865Z] #1 ← 200 OK: sfo1::n4lps-1785475728763-c9767b3aa075 [820ms]
+> [debug] [2026-07-31T05:28:48.928Z] Spinner invoked (Deploying umar033s-projects/partfolia) with a 0ms delay
+[client-debug] 2026-07-31T05:28:48.928Z Creating deployment...
+[client-debug] 2026-07-31T05:28:48.928Z Provided 'path' is a directory.
+[client-debug] 2026-07-31T05:28:48.929Z Found 4 rules in .vercelignore
+[client-debug] 2026-07-31T05:28:48.929Z Building file tree...
+[client-debug] 2026-07-31T05:28:48.946Z Error detecting microfrontend config: MicrofrontendsError: Could not infer the location of the `microfrontends.json` file for application "partfolia" starting in directory "C:\Users\User\Desktop\mypartfolia".
+[client-debug] 2026-07-31T05:28:48.949Z Found 235 files in the specified directory
+[client-debug] 2026-07-31T05:28:48.965Z Yielding a 'hashes-calculated' event with 212 hashes
+[client-debug] 2026-07-31T05:28:48.965Z Using provided API URL: https://api.vercel.com
+[client-debug] 2026-07-31T05:28:48.965Z Using provided user agent: vercel 58.4.4 node-v24.16.0 win32 (x64)
+[client-debug] 2026-07-31T05:28:48.965Z Setting platform version to harcoded value 2
+[client-debug] 2026-07-31T05:28:48.965Z Creating the deployment and starting upload...
+[client-debug] 2026-07-31T05:28:48.965Z Determining necessary files for upload...
+[client-debug] 2026-07-31T05:28:48.965Z Creating deployment
+[client-debug] 2026-07-31T05:28:48.966Z Sending deployment creation API request
+[client-debug] 2026-07-31T05:28:50.013Z Deployment response: {"alias":["partfolia-umar033ya-umar033s-projects.vercel.app"],"aliasAssigned":false,"automaticAliases":["partfolia-umar033ya-umar033s-projects.vercel.app"],"bootedAt":1785475729687,"buildingAt":1785475729687,"buildSkipped":false,"createdAt":1785475729687,"creator":{"uid":"MmFPdiMbdg3j9Ua1PcaqhlWx","username":"umar033ya"},"id":"dpl_5W4RvLqYePDwYCbo1G7r7C2X6epB","name":"partfolia","meta":{"githubCommitAuthorName":"Umar033ya","githubCommitAuthorEmail":"umaryakubov033ppp@gmail.com","githubCommitMessage":"update my portfolia","githubCommitOrg":"Umar033ya","githubCommitRef":"main","githubCommitRepo":"mypartfolia","githubCommitSha":"e58838bffd8481aa7fc6d0ac181e7a450925b994","githubDeployment":"1","githubOrg":"Umar033ya","githubRepo":"mypartfolia","gitDirty":"1"},"originCacheRegion":"iad1","project":{"id":"prj_BO60zp0miRulRJVLs7UuOVOAPyni","name":"partfolia","framework":"nextjs"},"public":false,"prebuilt":true,"readyState":"INITIALIZING","regions":["iad1"],"source":"cli","status":"INITIALIZING","target":null,"team":{"id":"team_LV1lXj96vUprVmMM1fjb1XHJ","name":"Umar033's projects","slug":"umar033s-projects"},"type":"LAMBDAS","url":"partfolia-ngrr4nuoq-umar033s-projects.vercel.app","version":2,"previewCommentsEnabled":true,"oidcTokenClaims":{"sub":"owner:umar033s-projects:project:partfolia:environment:preview","iss":"https://oidc.vercel.com/umar033s-projects","scope":"owner:umar033s-projects:project:partfolia:environment:preview","aud":"https://vercel.com/umar033s-projects","owner":"umar033s-projects","owner_id":"team_LV1lXj96vUprVmMM1fjb1XHJ","project":"partfolia","project_id":"prj_BO60zp0miRulRJVLs7UuOVOAPyni","environment":"preview","plan":"hobby"},"lambdas":[{"id":"bld_c2ipnunsc","createdAt":1785475729409,"entrypoint":".","readyState":"READY","readyStateAt":1785475729409,"output":[]}],"aliasAssignedAt":null,"build":{"env":[]},"builds":[],"createdIn":"sfo1","env":[],"functions":null,"inspectorUrl":"https://vercel.com/umar033s-projects/partfolia/5W4RvLqYePDwYCbo1G7r7C2X6epB","isInConcurrentBuildsQueue":false,"isInSystemBuildsQueue":true,"ownerId":"team_LV1lXj96vUprVmMM1fjb1XHJ","plan":"hobby","projectId":"prj_BO60zp0miRulRJVLs7UuOVOAPyni","projectSettings":{"buildCommand":null,"devCommand":null,"framework":"nextjs","commandForIgnoringBuildStep":null,"installCommand":null,"outputDirectory":null,"speedInsights":{"id":"hecTrQoGgNAqik0o5l4nQZrnnBJ","hasData":false},"webAnalytics":{"id":"GXYY9cHZE5CKMYCnY6z4RotiL"},"nodeVersion":"24.x"},"routes":null,"config":{"version":1,"secureComputePrimaryRegion":null,"secureComputeFallbackRegion":null,"functionTimeout":300,"functionType":"fluid","functionMemoryType":"standard","isUsingActiveCPU":true,"resourceConfig":{"buildMachine":{"defaultPurchaseType":"standard","purchaseType":"standard","machineSelectionType":"fixed"},"buildQueue":{"configuration":"SKIP_NAMESPACE_QUEUE"}}},"attribution":{"commitMeta":{"name":"Umar033ya","email":"umaryakubov033ppp@gmail.com","isVerified":false}}}
+[client-debug] 2026-07-31T05:28:50.014Z Deployment created with a notice:  To deploy to production (partfolia.vercel.app), run `vercel --prod`
+[client-debug] 2026-07-31T05:28:50.014Z Yielding a 'notice' event
+[client-debug] 2026-07-31T05:28:50.014Z Deployment created
+[client-debug] 2026-07-31T05:28:50.014Z Yielding a 'created' event
+  Inspect         https://vercel.com/umar033s-projects/partfolia/5W4RvLqYePDwYCbo1G7r7C2X6epB
+  Preview         https://partfolia-ngrr4nuoq-umar033s-projects.vercel.app
+https://partfolia-ngrr4nuoq-umar033s-projects.vercel.app> [debug] [2026-07-31T05:28:50.015Z] Spinner invoked (Building…) with a 0ms delay
+> [debug] [2026-07-31T05:28:50.015Z] #3 → GET https://api.vercel.com/v3/now/deployments/dpl_5W4RvLqYePDwYCbo1G7r7C2X6epB/events?direction=forward&follow=1&format=lines&teamId=team_LV1lXj96vUprVmMM1fjb1XHJ
+[client-debug] 2026-07-31T05:28:50.016Z Waiting for deployment to be ready...
+[client-debug] 2026-07-31T05:28:50.016Z Waiting for builds and the deployment to complete...
+[client-debug] 2026-07-31T05:28:51.969Z Deployment state changed to BUILDING
+[client-debug] 2026-07-31T05:28:51.969Z Yielding a 'building' event
+> [debug] [2026-07-31T05:28:51.970Z] Spinner invoked (Building…) with a 0ms delay
+> [debug] [2026-07-31T05:28:52.547Z] #3 ← 200 OK: sfo1::rhfvv-1785475730225-100abb8b5b2d [2.53s]
+> [debug] [2026-07-31T05:28:52.548Z] Spinner invoked (Running build in Washington, D.C., USA (East) – iad1) with a 0ms delay
+> [debug] [2026-07-31T05:28:52.548Z] Spinner invoked (Build machine configuration: 2 cores, 8 GB) with a 0ms delay
+> [debug] [2026-07-31T05:28:52.548Z] Spinner invoked (Retrieving list of deployment files...) with a 0ms delay
+> [debug] [2026-07-31T05:28:52.548Z] Spinner invoked (Previous build caches not available.) with a 0ms delay
+> [debug] [2026-07-31T05:28:52.549Z] Spinner invoked (Downloading 235 deployment files...) with a 0ms delay
+[client-debug] 2026-07-31T05:28:53.457Z Yielding a 'error' event
+> [debug] [2026-07-31T05:28:53.462Z] Error: Error: Vulnerable version of Next.js detected, please update immediately.
+Error: Vulnerable version of Next.js detected, please update immediately.
+    at Now.handleDeploymentError (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-IEDUCUDV.js:1630:12)
+    at processDeployment (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-IEDUCUDV.js:1399:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Now.create (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-IEDUCUDV.js:1523:24)
+    at async createDeploy (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:195:12)
+    at async handleDefaultDeploy (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:1634:18)
+    at async _Span.trace (C:\Users\User\AppData\Roaming\npm\node_modules\vercel\node_modules\@vercel\build-utils\dist\index.js:36343:14)
+    at async main (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/index.js:2309:18)
+> [debug] [2026-07-31T05:28:53.462Z] handling error: Error: Vulnerable version of Next.js detected, please update immediately.
+    at Now.handleDeploymentError (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-IEDUCUDV.js:1630:12)
+    at processDeployment (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-IEDUCUDV.js:1399:33)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async Now.create (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/chunks/chunk-IEDUCUDV.js:1523:24)
+    at async createDeploy (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:195:12)
+    at async handleDefaultDeploy (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/commands/deploy/index.js:1634:18)
+    at async _Span.trace (C:\Users\User\AppData\Roaming\npm\node_modules\vercel\node_modules\@vercel\build-utils\dist\index.js:36343:14)
+    at async main (file:///C:/Users/User/AppData/Roaming/npm/node_modules/vercel/dist/index.js:2309:18)
+Error: Vulnerable version of Next.js detected, please update immediately.
+> [debug] [2026-07-31T05:28:53.689Z] Vercel CLI 58.4.4 (Node.js 24.16.0)
+
+> [debug] [2026-07-31T05:28:54.663Z] Telemetry event tracked
+> [debug] [2026-07-31T05:28:54.709Z] Telemetry subprocess exited with code 0
