@@ -24,7 +24,10 @@ export type SkillItem = {
   category: "Mobile" | "Frontend" | "Backend" | "Database" | "Language" | "Styling" | "Tooling";
   iconName: string;
   description: string;
+  /** Brand colour, used on the dark theme. */
   color: string;
+  /** Darker variant used on the light theme when `color` would be unreadable. */
+  colorLight?: string;
 };
 
 export const skillsList: SkillItem[] = [
@@ -34,6 +37,7 @@ export const skillsList: SkillItem[] = [
     iconName: "Smartphone",
     description: "Building native cross-platform mobile apps for iOS and Android.",
     color: "#61DAFB",
+    colorLight: "#0A7EA4",
   },
   {
     name: "TypeScript",
@@ -48,6 +52,7 @@ export const skillsList: SkillItem[] = [
     iconName: "Globe",
     description: "Full-stack React framework with SSR, SSG, and App Router.",
     color: "#FFFFFF",
+    colorLight: "#0F172A",
   },
   {
     name: "Node.js",
@@ -55,6 +60,7 @@ export const skillsList: SkillItem[] = [
     iconName: "Server",
     description: "Server-side JavaScript runtime for REST APIs, auth flows, and real-time services.",
     color: "#5FA04E",
+    colorLight: "#3F7A32",
   },
   {
     name: "SQLite",
@@ -62,6 +68,7 @@ export const skillsList: SkillItem[] = [
     iconName: "Database",
     description: "Lightweight embedded SQL database for local-first web and mobile storage.",
     color: "#38BDF8",
+    colorLight: "#0284C7",
   },
   {
     name: "React",
@@ -69,6 +76,7 @@ export const skillsList: SkillItem[] = [
     iconName: "Atom",
     description: "Creating interactive dynamic user interfaces and component systems.",
     color: "#61DAFB",
+    colorLight: "#0A7EA4",
   },
   {
     name: "JavaScript",
@@ -76,6 +84,7 @@ export const skillsList: SkillItem[] = [
     iconName: "FileCode",
     description: "Core logic scripting with modern ES6+ features.",
     color: "#F7DF1E",
+    colorLight: "#A16207",
   },
   {
     name: "HTML",
@@ -97,6 +106,7 @@ export const skillsList: SkillItem[] = [
     iconName: "Wind",
     description: "Utility-first CSS framework for rapid and elegant styling.",
     color: "#06B6D4",
+    colorLight: "#0E7490",
   },
   {
     name: "Git",
@@ -111,6 +121,7 @@ export const skillsList: SkillItem[] = [
     iconName: "Github",
     description: "Collaborative code hosting, CI/CD workflows, and code review.",
     color: "#FFFFFF",
+    colorLight: "#0F172A",
   },
 ];
 
@@ -178,6 +189,51 @@ export const aiTools: AITool[] = [
     gradient: ["#06B6D4", "#3B82F6"],
     iconName: "Layers",
     badge: "UI & Prototyping",
+  },
+  {
+    id: "manus",
+    name: "Manus AI",
+    shortDescription: "Autonomous multi-step tasks from a single brief.",
+    myUsage: "I hand Manus the jobs that span many steps — gathering requirements, scaffolding a module, and following the thread to a finished result while I focus on the parts that need judgment.",
+    gradient: ["#F43F5E", "#A855F7"],
+    iconName: "Workflow",
+    badge: "Autonomous Agent",
+  },
+  {
+    id: "freebuff",
+    name: "Freebuff",
+    shortDescription: "Fast, free coding agent for everyday changes.",
+    myUsage: "Freebuff is my low-friction option for routine work — small refactors, boilerplate, and quick edits where spinning up a heavier agent would cost more time than it saves.",
+    gradient: ["#F97316", "#EF4444"],
+    iconName: "Zap",
+    badge: "Coding Agent",
+  },
+  {
+    id: "kiro",
+    name: "Kiro",
+    shortDescription: "Spec-driven development, from requirements to code.",
+    myUsage: "Kiro is where I start features that need a plan before a line of code — writing the spec, letting it break the work into tasks, and keeping the implementation anchored to what was actually agreed.",
+    gradient: ["#22D3EE", "#0EA5E9"],
+    iconName: "Blocks",
+    badge: "Spec-Driven IDE",
+  },
+  {
+    id: "hermes",
+    name: "Hermes Agent",
+    shortDescription: "Local-first agent that keeps the codebase on my machine.",
+    myUsage: "I reach for Hermes when a project should stay local — running an agent against the repository on my own machine without shipping the whole codebase somewhere else.",
+    gradient: ["#84CC16", "#14B8A6"],
+    iconName: "Rocket",
+    badge: "Local-First Agent",
+  },
+  {
+    id: "opencode",
+    name: "OpenCode",
+    shortDescription: "Open-source terminal agent for repo-wide work.",
+    myUsage: "OpenCode lives in my terminal for repo-wide passes — searching across files, applying consistent changes, and staying inside the shell where the rest of my workflow already is.",
+    gradient: ["#A78BFA", "#6366F1"],
+    iconName: "SquareTerminal",
+    badge: "Open Source CLI",
   },
 ];
 

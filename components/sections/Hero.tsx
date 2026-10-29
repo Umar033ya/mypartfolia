@@ -14,8 +14,13 @@ const container = {
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
 };
 
 export function Hero() {
@@ -43,7 +48,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] text-ink-primary"
+            className="text-[2.6rem] sm:text-6xl lg:text-7xl font-semibold leading-[1.04] text-ink-primary text-balance"
           >
             {t("hero.title1")}
             <br />
@@ -52,7 +57,7 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-xl text-lg text-ink-secondary leading-relaxed"
+            className="mt-6 measure text-lg text-ink-secondary leading-relaxed"
           >
             {t("hero.bio")}
           </motion.p>

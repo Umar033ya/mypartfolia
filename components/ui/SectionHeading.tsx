@@ -31,7 +31,7 @@ export function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.05 }}
-        className="text-3xl sm:text-4xl font-semibold text-ink-primary"
+        className="text-[2rem] leading-[1.12] sm:text-[2.75rem] lg:text-5xl font-semibold text-ink-primary text-balance"
       >
         {title}
       </motion.h2>
@@ -41,7 +41,9 @@ export function SectionHeading({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mt-4 text-ink-secondary text-base sm:text-lg leading-relaxed"
+          className={`mt-5 text-ink-secondary text-base sm:text-lg leading-relaxed ${
+            align === "center" ? "" : "measure"
+          }`}
         >
           {description}
         </motion.p>

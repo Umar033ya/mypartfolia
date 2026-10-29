@@ -3,6 +3,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 import { aiTools } from "@/lib/data";
 import { Zap } from "lucide-react";
 import { AIToolsList } from "./AIToolsList";
@@ -13,6 +14,7 @@ export default function AIToolsPage() {
 
   return (
     <>
+      <ScrollProgress />
       <AmbientBackground />
       <Header />
       <main className="pt-36 pb-24 sm:pt-44 sm:pb-32">

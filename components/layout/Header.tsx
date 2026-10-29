@@ -34,7 +34,7 @@ export function Header() {
       <div className="container-content">
         <div
           className={`mt-4 flex items-center justify-between rounded-2xl px-4 py-3 transition-all duration-300 ${
-            scrolled ? "glass shadow-[0_8px_32px_rgba(0,0,0,0.35)]" : "bg-transparent border border-transparent"
+            scrolled ? "glass card-shadow" : "bg-transparent border border-transparent"
           }`}
         >
           <Link

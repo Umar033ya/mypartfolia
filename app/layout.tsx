@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import { Providers } from "@/components/Providers";
 import "./globals.css";
 
-const spaceGrotesk = { variable: "--font-display" };
-const inter = { variable: "--font-body" };
-const jetbrainsMono = { variable: "--font-mono" };
+const GOOGLE_FONTS_HREF =
+  "https://fonts.googleapis.com/css2" +
+  "?family=Space+Grotesk:wght@500;600;700" +
+  "&family=Inter:wght@400;500;600" +
+  "&family=JetBrains+Mono:wght@400;500" +
+  "&display=swap";
 
 const siteUrl = "https://umar.dev";
 
@@ -62,7 +65,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="uz" suppressHydrationWarning className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="uz" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={GOOGLE_FONTS_HREF} />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>

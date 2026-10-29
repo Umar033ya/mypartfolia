@@ -64,18 +64,24 @@ export function Skills() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <GlassCard className="group relative p-6 h-full flex flex-col justify-between overflow-hidden transition-all duration-300 hover:border-accent-blue/40">
+                <GlassCard
+                  spotlight
+                  className="group relative p-6 h-full flex flex-col justify-between overflow-hidden transition-colors duration-300 hover:border-accent-blue/40"
+                  style={
+                    {
+                      "--skill": skill.color,
+                      "--skill-light": skill.colorLight ?? skill.color,
+                    } as React.CSSProperties
+                  }
+                >
                   <div
                     className="absolute -right-8 -top-8 h-32 w-32 rounded-full opacity-0 group-hover:opacity-15 transition-opacity duration-500 blur-xl pointer-events-none"
-                    style={{ backgroundColor: skill.color }}
+                    style={{ backgroundColor: skill.colorLight ?? skill.color }}
                   />
 
                   <div>
                     <div className="flex items-center justify-between">
-                      <div
-                        className="flex h-12 w-12 items-center justify-center rounded-xl glass border border-border transition-transform duration-300 group-hover:scale-110"
-                        style={{ color: skill.color }}
-                      >
+                      <div className="skill-ink flex h-12 w-12 items-center justify-center rounded-xl glass border border-border transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
                         <Icon size={24} />
                       </div>
                       <span className="font-mono text-xs px-2.5 py-1 rounded-full glass border border-border text-ink-tertiary">
