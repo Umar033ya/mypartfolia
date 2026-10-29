@@ -16,12 +16,12 @@ export const socials = [
 export const heroStats = [
   { value: "3", suffix: "", label: "Shipped products" },
   { value: "2", suffix: "", label: "Platforms — web & mobile" },
-  { value: "10", suffix: "+", label: "Skills & modern stack" },
+  { value: "12", suffix: "+", label: "Skills & modern stack" },
 ];
 
 export type SkillItem = {
   name: string;
-  category: "Mobile" | "Frontend" | "Language" | "Styling" | "Tooling";
+  category: "Mobile" | "Frontend" | "Backend" | "Database" | "Language" | "Styling" | "Tooling";
   iconName: string;
   description: string;
   color: string;
@@ -48,6 +48,20 @@ export const skillsList: SkillItem[] = [
     iconName: "Globe",
     description: "Full-stack React framework with SSR, SSG, and App Router.",
     color: "#FFFFFF",
+  },
+  {
+    name: "Node.js",
+    category: "Backend",
+    iconName: "Server",
+    description: "Server-side JavaScript runtime for REST APIs, auth flows, and real-time services.",
+    color: "#5FA04E",
+  },
+  {
+    name: "SQLite",
+    category: "Database",
+    iconName: "Database",
+    description: "Lightweight embedded SQL database for local-first web and mobile storage.",
+    color: "#38BDF8",
   },
   {
     name: "React",
@@ -268,7 +282,7 @@ export const experience: ExperienceItem[] = [
 
 export const stats = [
   { value: 3, suffix: "", label: "Products shipped", note: "web & mobile" },
-  { value: 10, suffix: "+", label: "Core technologies mastered", note: "React Native & Web" },
+  { value: 12, suffix: "+", label: "Core technologies mastered", note: "mobile, web & backend" },
   { value: 2, suffix: "", label: "Platforms covered", note: "iOS, Android, web" },
   { value: 100, suffix: "%", label: "TypeScript adoption", note: "on every project" },
 ];

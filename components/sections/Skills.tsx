@@ -12,6 +12,8 @@ import {
   Wind,
   GitBranch,
   Github,
+  Server,
+  Database,
   LucideIcon,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -30,6 +32,8 @@ const iconMap: Record<string, LucideIcon> = {
   Wind,
   GitBranch,
   Github,
+  Server,
+  Database,
 };
 
 export function Skills() {
