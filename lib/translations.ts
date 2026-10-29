@@ -41,7 +41,7 @@ export const translations = {
     },
     projects: {
       eyebrow: "Tanlangan loyihalar",
-      title: "Uchta mahsulot, ikkita platforma, bitta standart.",
+      title: "Beshta mahsulot, ikkita platforma, bitta standart.",
       description: "Yaratilgan loyihalar — muammo, yechim va uning ortidagi texnologiyalar to'plami.",
       viewProject: "Loyihani ko'rish",
       sourceCode: "Manba kodi",
@@ -129,7 +129,7 @@ export const translations = {
     },
     projects: {
       eyebrow: "Selected work",
-      title: "Three products, two platforms, one standard.",
+      title: "Five products, two platforms, one standard.",
       description: "A look at what's shipped — the problem, the build, and the stack behind it.",
       viewProject: "View project",
       sourceCode: "Source",
@@ -217,7 +217,7 @@ export const translations = {
     },
     projects: {
       eyebrow: "Избранные работы",
-      title: "Три продукта, две платформы, один стандарт.",
+      title: "Пять продуктов, две платформы, один стандарт.",
       description: "Обзор реализованных проектов — задача, разработка и используемый стек.",
       viewProject: "Смотреть проект",
       sourceCode: "Исходный код",

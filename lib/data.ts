@@ -14,7 +14,7 @@ export const socials = [
 ];
 
 export const heroStats = [
-  { value: "3", suffix: "", label: "Shipped products" },
+  { value: "5", suffix: "", label: "Shipped products" },
   { value: "2", suffix: "", label: "Platforms — web & mobile" },
   { value: "12", suffix: "+", label: "Skills & modern stack" },
 ];
@@ -196,6 +196,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "ustoz-daftar",
+    name: "Ustoz Daftar",
+    tagline: "Hours of grading, done in a few minutes.",
+    description:
+      "A web platform that takes the paperwork out of BSB and ChSB assessments for teachers. Classes and students are set up once, scores go in, and totals, percentages and class statistics are calculated automatically — then exported straight to Excel, PDF or a print-ready table. Abdulla built the whole product: accounts, the scoring engine, the charts, and the subscription tiers behind it.",
+    role: "Full Stack Developer",
+    platform: "Web",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "SQLite"],
+    gradient: ["#F97316", "#F43F5E"],
+    year: "2026",
+    links: { demo: "https://ustozdaftar.vercel.app", repo: "https://github.com/Umar033ya/" },
+  },
+  {
+    slug: "formo",
+    name: "Formo",
+    tagline: "Design your own kit, delivered to your door.",
+    description:
+      "An online studio for custom football kits. Customers pick colors and gradients, add a name, a number and a logo, and watch the jersey and matching shorts update live before they order. Abdulla built the constructor and the frontend on top of the project's own API and admin panel, with a React Native companion app sharing the same designs.",
+    role: "Full Stack Developer",
+    platform: "Web & Mobile",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "React Native", "Expo"],
+    gradient: ["#22C55E", "#14B8A6"],
+    year: "2026",
+    links: { demo: "https://formo.uz", repo: "https://github.com/Umar033ya/" },
+  },
+  {
     slug: "dropforge",
     name: "DropForge",
     tagline: "A forge for shipping drops without the busywork.",
@@ -252,6 +278,7 @@ export const experience: ExperienceItem[] = [
     summary:
       "Designing and building complete products end to end — from typed backend schemas to pixel-perfect mobile and web interfaces.",
     highlights: [
+      "Launched Ustoz Daftar and Formo as live products used in the wild",
       "Shipped DropForge and Dachago.uz as production Next.js applications",
       "Standardized on TypeScript across every project for safer, faster iteration",
     ],
@@ -281,7 +308,7 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const stats = [
-  { value: 3, suffix: "", label: "Products shipped", note: "web & mobile" },
+  { value: 5, suffix: "", label: "Products shipped", note: "web & mobile" },
   { value: 12, suffix: "+", label: "Core technologies mastered", note: "mobile, web & backend" },
   { value: 2, suffix: "", label: "Platforms covered", note: "iOS, Android, web" },
   { value: 100, suffix: "%", label: "TypeScript adoption", note: "on every project" },
